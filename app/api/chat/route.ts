@@ -25,7 +25,7 @@ export async function POST(req: Request) {
             ? "No specific genre was given, so the recommendations will be based on the description."
             : null
         }
-          Make sure each generated biography is less than 160 characters, has short sentences that are found in Twitter bios, and base them on this context: ${description}${
+          Make sure each generated reccomendation is less than 300 characters, base them on this context: ${description}${
             description.slice(-1) === '.' ? '' : '.'
         }`,
       },
