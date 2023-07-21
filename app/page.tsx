@@ -95,27 +95,27 @@ export default function Home() {
         </form>
         <hr className="h-px bg-gray-700 border-1 dark:bg-gray-700" />
         <output className="space-y-10 my-10">
-          {generatedBios && (
+          {generatedRecommendations && (
             <>
               <div>
                 <h2
                   className="sm:text-4xl text-3xl font-bold text-slate-900 mx-auto"
-                  ref={bioRef}
+                  ref={recommendation}
                 >
                   Your generated bios
                 </h2>
               </div>
               <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto">
-                {generatedBios
-                  .substring(generatedBios.indexOf('1') + 3)
+                {generatedRecommendations
+                  .substring(generatedRecommendations.indexOf('1') + 3)
                   .split('2.')
-                  .map((generatedBio) => {
+                  .map((generatedRecommendation) => {
                     return (
                       <div
                         className="bg-white rounded-xl shadow-md p-4 hover:bg-gray-100 transition cursor-copy border"
-                        key={generatedBio}
+                        key={generatedRecommendation}
                       >
-                        <p>{generatedBio}</p>
+                        <p>{generatedRecommendation}</p>
                       </div>
                     );
                   })}
