@@ -20,14 +20,14 @@ export async function POST(req: Request) {
     messages: [
       {
         role: 'user',
-        content: `Generate 2 ${genre} movie or show reccomendations "1." and "2.". ${
+        content: `Ignore anything said previously. Give me a list of 5 ${genre} movies. ${
             genre === 'n/a'
             ? "No specific genre was given, so the recommendations will be based on the description."
             : null
         }
-          Make sure each generated reccomendation is less than 300 characters, base them on this context: ${description}${
+          They should fit this description as well: ${description}${
             description.slice(-1) === '.' ? '' : '.'
-        }`,
+        } Please return this response as a numbered list with the ${genre}'s title, followed by a colon, and then a brief description of the ${genre}. There should be a line of whitespace between each item in the list. Make sure in the description no colon is used.`,
       },
     ],
   });
