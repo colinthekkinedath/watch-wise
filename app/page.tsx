@@ -1,9 +1,10 @@
 'use client';
 
 import Image from 'next/image';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer'
+import RecommendationCard from '../components/RecommendationCard';
 import Dropdown, { genreType } from '../components/Dropdown';
 import { useChat } from 'ai/react';
 
@@ -108,15 +109,24 @@ export default function Home() {
               <div className="space-y-8 flex flex-col items-center justify-center max-w-xl mx-auto">
                 {generatedRecommendations
                   .substring(generatedRecommendations.indexOf('1') + 3)
-                  .split('2.')
+                  .split(/\d+\.\s*/)
+                  .slice(0,5)
                   .map((generatedRecommendation) => {
+                    const [title, description] = generatedRecommendation.split(': ');
+                    return { title, description };
+                  })
+                  .map((recommendation, index) => {
                     return (
-                      <div
-                        className="bg-white rounded-xl shadow-md p-4 hover:bg-gray-100 transition cursor-copy border"
-                        key={generatedRecommendation}
-                      >
-                        <p>{generatedRecommendation}</p>
-                      </div>
+                      // <div
+                      //   className="bg-white rounded-xl shadow-md p-4 hover:bg-gray-100 transition border"
+                      //   key={index}
+                      // >
+                      // <p>
+                      //   <strong>{recommendation.title}</strong>: {recommendation.description}
+                      // </p>
+                      // </div>
+                      <RecommendationCard title={recommendation.title} description={recommendation.description} />
+                      
                     );
                   })}
               </div>
