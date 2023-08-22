@@ -45,7 +45,8 @@ export default function Home() {
     <main className="flex max-w-5xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
       <Hero/>
       <form className="max-w-xl w-full" onSubmit={onSubmit}>
-          <div className="flex mt-10 items-center space-x-3">
+          <div className = 'text-left mt-10 text-2xl font-bold'>step 1.</div>
+          <div className="flex items-center space-x-3">
             {/* <Image
               src="/1-black.png"
               width={30}
@@ -66,6 +67,7 @@ export default function Home() {
               'e.g. a movie about a group of friends who go on a road trip'
             }
           />
+          <div className = 'text-left text-2xl font-bold'>step 2.</div>
           <div className="flex mb-5 items-center space-x-3">
             {/* <Image src="/2-black.png" width={30} height={30} alt="1 icon" /> */}
             <p className="text-left font-medium">select a genre!</p>
