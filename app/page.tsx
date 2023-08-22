@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useRef, useState, useEffect } from 'react';
 import Header from '../components/Header';
+import Hero from '../components/Hero';
 import Footer from '../components/Footer'
 import RecommendationCard from '../components/RecommendationCard';
 import Dropdown, { genreType } from '../components/Dropdown';
@@ -43,6 +44,7 @@ export default function Home() {
   return (
     <main className="flex max-w-5xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
       <Header/>
+      <Hero/>
       <form className="max-w-xl w-full" onSubmit={onSubmit}>
           <div className="flex mt-10 items-center space-x-3">
             {/* <Image
@@ -70,9 +72,8 @@ export default function Home() {
             <p className="text-left font-medium">select a genre!</p>
           </div>
           <div className="block">
-          <Dropdown genre={genre} setGenre={(newGenre) => setGenre(newGenre)} />
+            <Dropdown genre={genre} setGenre={(newGenre) => setGenre(newGenre)} />
           </div>
-
           {!isLoading && (
             <button
               className="bg-black rounded-xl text-white font-medium px-4 py-2 sm:mt-10 mt-8 hover:bg-black/80 w-full"
