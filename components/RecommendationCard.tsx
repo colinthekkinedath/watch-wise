@@ -11,7 +11,7 @@ const RecommendationCard = ({ title, description }: MovieCardProps) => {
 
 
     useEffect(() => {
-        // Fetch movie data based on the title
+        // this isnt even my own api key😭
         fetch(`https://api.themoviedb.org/3/search/movie?api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb&query=${title}`)
             .then((response) => response.json())
             .then((json) => {

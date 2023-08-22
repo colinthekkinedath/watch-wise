@@ -43,7 +43,6 @@ export default function Home() {
 
   return (
     <main className="flex max-w-5xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
-      <Header/>
       <Hero/>
       <form className="max-w-xl w-full" onSubmit={onSubmit}>
           <div className="flex mt-10 items-center space-x-3">
